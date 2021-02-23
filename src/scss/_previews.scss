@@ -1,0 +1,35 @@
+.tab-content .tab-pane .wrapper {
+	padding: 2%;
+	div, h3 {
+		padding: 0 .2rem 0 .2rem;
+	}
+	h3 {
+		padding: 0 0 .1rem 0;
+	}
+}
+#nav-discord .wrapper {
+	background-color: $discord-background;
+	border-left: 5px solid #ff0000;
+
+	color: $discord-text;
+	font-family: 'Roboto', sans-serif;
+}
+#nav-telegram .wrapper {
+	background-color: #fff;
+	color: #000;
+	font-family: 'Roboto', sans-serif;
+}
+#nav-email .wrapper {
+	background-color: #fff;
+	color: rgb(32,33,36);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.875rem;
+}
+
+#nav-discord,
+#nav-telegram,
+#nav-email {
+	.wrapper {
+		white-space: pre-line;
+	}
+}

@@ -1,0 +1,39 @@
+body {
+	background-color: $blanko-blue;
+	
+}
+
+h1, 
+p, 
+span {
+	color: #fff;
+}
+
+
+.preview {
+	word-wrap: break-word;
+	a {
+		color: #fff;
+	}
+}
+
+label {
+	font-size: 125%;
+	font-weight: 800;
+	font-style: "Comic Sans MS", "Comic Sans", cursive;
+	color: $blanko-pink;
+}
+
+
+img.margin_right {
+		position: absolute;
+		bottom: -25px;
+		right: -20px;
+		opacity: 0.5;
+}
+
+.form-check-label,
+input[type=checkbox] {
+	position: relative;
+	margin: .5rem .5rem 0 0;
+}
