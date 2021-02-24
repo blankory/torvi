@@ -93,6 +93,6 @@ Thumbs.db
 # Composer vendor folder
 src/vendor/
 
-src/css/*
+src/static/css/*
 secrets.php
 src/.htaccess
