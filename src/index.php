@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-require_once "integrations/header.inc.php";
+require_once "header.inc.php";
 require_once "form.php";
 require_once "integrations/discord.msg.send.php";
 require_once "integrations/telegram.msg.send.php";
