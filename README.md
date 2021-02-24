@@ -14,7 +14,7 @@ Tiedotustorvi is a tool created for active members of Blanko ry, to keep their h
 - `npm install`
 - `composer install`
 - copy `secrets.example.php` to `secrets.php` and fill credentials
-- Setup PHP and your favourite web server (such as Apache2 or Nginx) to your favourite environment, and configure document root to point at `dist` directory.
+- Setup PHP and your favourite web server (such as Apache2 or Nginx) to your favourite environment, and configure document root to point at `src` directory.
 
 ### Helper commands for development
 
