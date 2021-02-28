@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-require_once "header.inc.php";
-require_once "form.php";
-require_once "integrations/discord.msg.send.php";
-require_once "integrations/telegram.msg.send.php";
-require_once "integrations/email.msg.send.php";
+require_once dirname(__FILE__) . "/header.inc.php";
+require_once dirname(__FILE__) . "/form.php";
+require_once dirname(__FILE__) . "/integrations/discord.msg.send.php";
+require_once dirname(__FILE__) . "/integrations/telegram.msg.send.php";
+require_once dirname(__FILE__) . "/integrations/email.msg.send.php";
 //require_once 'gcal.add.php';
 
 $protocol = $_SERVER["HTTPS"] == "on" ? "https" : "http";

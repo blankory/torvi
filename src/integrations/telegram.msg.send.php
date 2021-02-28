@@ -1,7 +1,7 @@
 <?php
 function send_telegram_msg($title, $description, $url)
 {
-    include "../../secrets.php";
+    include dirname(__FILE__) . "/../../secrets.php";
     $token = $secrets->telegram_token;
     $group_id = $secrets->telegram_group_id;
 

@@ -1,7 +1,7 @@
 <?php
 function send_discord_msg($title, $description, $url)
 {
-    include "../../secrets.php";
+    include dirname(__FILE__)."/../../secrets.php";
     //=======================================================================================================
     // Create new webhook in your Discord channel settings and copy&paste URL
     //=======================================================================================================

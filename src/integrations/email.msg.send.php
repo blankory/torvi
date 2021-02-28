@@ -5,7 +5,7 @@ use PHPMailer\PHPMailer\Exception;
 
 function send_email_msg($title, $description, $signature, $reply_to, $url)
 {
-    include "../../secrets.php";
+    include dirname(__FILE__) . "/../../secrets.php";
     $username = $secrets->email_username;
     $password = $secrets->email_password;
     $from_name = $secrets->email_from_name;
