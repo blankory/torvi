@@ -1,6 +1,7 @@
 {
     "require": {
         "phpmailer/phpmailer": "^6.3",
-        "google/apiclient": "^2.0"
+        "google/apiclient": "^2.0",
+        "egulias/email-validator": "^3.0"
     }
 }
