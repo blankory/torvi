@@ -2,6 +2,10 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+use Egulias\EmailValidator\EmailValidator;
+use Egulias\EmailValidator\Validation\DNSCheckValidation;
+use Egulias\EmailValidator\Validation\MultipleValidationWithAnd;
+use Egulias\EmailValidator\Validation\RFCValidation;
 
 function send_email_msg($title, $description, $signature, $reply_to, $url)
 {
@@ -16,6 +20,16 @@ function send_email_msg($title, $description, $signature, $reply_to, $url)
 
     //Instantiation and passing `true` enables exceptions
     $mail = new PHPMailer(false);
+
+	$validator = new EmailValidator();
+	$multipleValidations = new MultipleValidationWithAnd([
+	    new RFCValidation(),
+	    new DNSCheckValidation()
+	]);
+	//ietf.org has MX records signaling a server with email capabilites
+	if(!$validator->isValid($reply_to, $multipleValidations)) {
+		return "email_error";
+	}
 
     try {
         //Server settings
@@ -40,8 +54,8 @@ function send_email_msg($title, $description, $signature, $reply_to, $url)
         //Content
         $mail->isHTML(true); //Set email format to HTML
         $mail->Subject = $title;
-        $mail->Body = nl2br($description . "\n" . $signature);
-        $mail->AltBody = nl2br($description . "\n" . $signature);
+        $mail->Body = nl2br($description . "\n\n" . $signature . "\n");
+        $mail->AltBody = nl2br($description . "\n\n" . $signature . "\n");
 
         $mail->send();
         echo "Message has been sent";
