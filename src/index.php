@@ -37,9 +37,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //echo "<div class='alert alert-warning'>".var_dump($_POST)."</div>";
 
     // Send announcements
-    send_discord_msg($title, $description . "\n\n" . $signature, $url);
-    send_telegram_msg($title, $description . "\n\n" . $signature, $url);
-    $email_response = send_email_msg($title, $description, $signature, $reply_to, $url);
+    if (isset($_POST["discord"])) {
+        send_discord_msg($title, $description . "\n\n" . $signature, $url);
+    }
+    if (isset($_POST["telegram"])) {
+        send_telegram_msg($title, $description . "\n\n" . $signature, $url);
+    }
+    if (isset($_POST["email"])) {
+        $email_response = send_email_msg($title, $description, $signature, $reply_to, $url);
+    }
 
     if( $email_response != ""){
     	header("Location: {$redirect_url}/index.php?status=error", true, 301);

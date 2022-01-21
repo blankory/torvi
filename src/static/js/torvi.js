@@ -1,6 +1,6 @@
 $(document).ready(function ()
 {
-
+	var isPlatformsSelected = false;
 	// disable enter on other places than textarea
 	$(document).on("keydown", ":input:not(textarea)", function (event)
 	{
@@ -10,14 +10,38 @@ $(document).ready(function ()
 	// enable send button when one's ready with their announcement
 	$('#verify').change(function ()
 	{
-		var btn = $("#submit_btn");
-		var c = this.checked ? btn.removeClass("disabled") : btn.addClass("disabled");
+		run_send_check();
+	});
+
+	$("input").change(function () {
+		run_send_check();
 	});
 
 	// enable datetime modules
 	$("#dt_start").DateTimePicker();
 	$("#dt_end").DateTimePicker();
 
+	function run_send_check() {
+		var btn = $("#submit_btn");
+		if ($("#verify").is(":checked") && is_platforms_selected()) {
+			btn.removeClass("disabled")
+		}
+		else {
+			btn.addClass("disabled");
+		}
+		
+	}
+
+	function is_platforms_selected() {
+		if ($("#platform_discord").is(":checked") ||
+			$("#platform_telegram").is(":checked") ||
+			$("#platform_email").is(":checked")) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 
 	function email_header_preview()
 	{
