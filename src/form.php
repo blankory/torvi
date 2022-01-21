@@ -22,7 +22,21 @@
                         <textarea id="signature" name="signature" class="form-control bg-dark text-white" required="" rows="5"></textarea>
                         <span class="char_count">max. 2000 chars</span>
                         <br />
-                        <!--
+
+			<label for="platforms">Send this to:</label> <br />
+			<div class="container">
+                            <div class="row">
+                                        <input type="checkbox" id="platform_discord" name="discord" value="discord">
+                                        <label for="platform1"> Discord</label>
+
+                                        <input type="checkbox" id="platform_telegram" name="telegram" value="telegram">
+                                        <label for="platform2"> Telegram</label>
+
+                                        <input type="checkbox" id="platform_email" name="email" value="email">
+                                        <label for="platform3"> Email</label>
+                            </div>
+			</div>
+				<!--
                     <label for="url">URL</label>
                     <input id="url" name="url" class="form-control form-control-lg bg-dark text-white" placeholder="optional" />
                     -->
