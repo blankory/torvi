@@ -65,7 +65,7 @@
 
                         <div class="row pl-3 pb-2">
                             <input class="form-check-input" type="checkbox" value="" name="ready" id="verify" />
-                            <label class="form-check-label" for="ready">Ready to go?</label>
+                            <label class="form-check-label" for="ready">Ready to go? Muistithan lisätä tägin otsikkoon!</label>
                         </div>
 
                         <button type="submit" class="btn btn-primary disabled mb-2" id="submit_btn">Send</button>
