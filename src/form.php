@@ -1,7 +1,7 @@
 <body class="content-dark">
     <img class="margin_right" src="static/img/blankoukko.png" alt="Blanko logo" />
     <div class="container">
-        <h1>Blankon tiedotustorvi</h1>
+        <h1>Tiedotustorvi</h1>
         <?php if (isset($_GET["status"])) {
             if ($_GET["status"] == "success") {
                 echo "<div class='alert alert-success'>Announcement sent successfully!</div>";
@@ -65,7 +65,7 @@
 
                         <div class="row pl-3 pb-2">
                             <input class="form-check-input" type="checkbox" value="" name="ready" id="verify" />
-                            <label class="form-check-label" for="ready">Ready to go?</label>
+                            <label class="form-check-label" for="ready">Ready to go? Remember to add a tag to the title!</label>
                         </div>
 
                         <button type="submit" class="btn btn-primary disabled mb-2" id="submit_btn">Send</button>
