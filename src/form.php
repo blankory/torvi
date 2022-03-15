@@ -1,7 +1,7 @@
 <body class="content-dark">
     <img class="margin_right" src="static/img/blankoukko.png" alt="Blanko logo" />
     <div class="container">
-        <h1>Blankon tiedotustorvi</h1>
+        <h1>Tiedotustorvi</h1>
         <?php if (isset($_GET["status"])) {
             if ($_GET["status"] == "success") {
                 echo "<div class='alert alert-success'>Announcement sent successfully!</div>";
