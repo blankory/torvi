@@ -1,5 +1,5 @@
 <?php
-function send_discord_msg($title, $description, $url)
+function send_discord_msg($title, $tag, $description, $url)
 {
     include dirname(__FILE__)."/../../secrets.php";
     //=======================================================================================================
@@ -38,7 +38,7 @@ function send_discord_msg($title, $description, $url)
             "embeds" => [
                 [
                     // Embed Title
-                    "title" => $title,
+                    "title" => $tag.$title,
 
                     // Embed Type
                     "type" => "rich",

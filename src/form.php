@@ -12,7 +12,7 @@
         } ?>
 
             <div class="row align-items-start">
-                <div class="col-6 main-wrap form-group">
+                <div class="col-12 col-md-6 main-wrap form-group">
                     <form method="post" action="index.php">
                         <label for="title">Title</label>
                         <input id="title" name="title" class="form-control form-control-lg bg-dark text-white" required="" />
@@ -23,19 +23,27 @@
                         <span class="char_count">max. 2000 chars</span>
                         <br />
 
-			<label for="platforms">Send this to:</label> <br />
-			<div class="container">
+                        <label for="platforms">Send this to:</label> <br />
+                        <div class="container">
                             <div class="row">
-                                        <input type="checkbox" id="platform_discord" name="discord" value="discord">
-                                        <label for="platform1"> Discord</label>
-
-                                        <input type="checkbox" id="platform_telegram" name="telegram" value="telegram">
-                                        <label for="platform2"> Telegram</label>
-
-                                        <input type="checkbox" id="platform_email" name="email" value="email">
-                                        <label for="platform3"> Email</label>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" id="platform_discord" name="discord" value="discord" class="custom-control-input">
+                                        <label class="custom-control-label" for="platform_discord"> Discord</label>
+                                    </div>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" id="platform_telegram" name="telegram" value="telegram" class="custom-control-input">
+                                        <label class="custom-control-label" for="platform_telegram"> Telegram</label>
+                                    </div>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" id="platform_email" name="email" value="email" class="custom-control-input">
+                                        <label class="custom-control-label" for="platform_email"> Email</label>
+                                    </div>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" id="platform_blankoweb" name="blankoweb" value="blankoweb" class="custom-control-input">
+                                        <label class="custom-control-label" for="platform_blankoweb"> Blankoweb</label>
+                                    </div>
                             </div>
-			</div>
+			            </div>
 				<!--
                     <label for="url">URL</label>
                     <input id="url" name="url" class="form-control form-control-lg bg-dark text-white" placeholder="optional" />
@@ -62,10 +70,56 @@
 -->
                         <label for="reply-to">Reply-to</label>
                         <input id="reply-to" name="reply-to" class="form-control form-control-lg bg-dark text-white" placeholder="for example: tapahtumavastaava@blanko.fi" required="" />
-
+                        <label for="tags">Tag</label> <br/>
+                        <div class="container">
+                        <div class="row">
+                            <div class="custom-control custom-radio mr-4">
+                                <input type="radio" id="Kulttuuri" name="tag" class="custom-control-input" value="[Kulttuuri] " required>
+                                <label class="custom-control-label" for="Kulttuuri">Kulttuuri</label>
+                            </div>
+                            <div class="custom-control custom-radio mr-4">
+                                <input type="radio" id="Urheilu" name="tag" class="custom-control-input" value="[Urheilu] ">
+                                <label class="custom-control-label" for="Urheilu">Urheilu</label>
+                            </div>
+                            <div class="custom-control custom-radio mr-4">
+                                <input type="radio" id="Tapahtumat" name="tag" class="custom-control-input" value="[Tapahtumat] ">
+                                <label class="custom-control-label" for="Tapahtumat">Tapahtumat</label>
+                            </div>
+                            <div class="custom-control custom-radio mr-4">
+                                <input type="radio" id="Kokoukset" name="tag" class="custom-control-input" value="[Kokoukset] ">
+                                <label class="custom-control-label" for="Kokoukset">Kokoukset</label>
+                            </div>
+                            <div class="custom-control custom-radio mr-4">
+                                <input type="radio" id="Tyopaikat" name="tag" class="custom-control-input" value="[Työpaikat] ">
+                                <label class="custom-control-label" for="Tyopaikat">Työpaikat</label>
+                            </div>
+                            <div class="custom-control custom-radio mr-4">
+                                <input type="radio" id="TOL" name="tag" class="custom-control-input" value="[TOL] ">
+                                <label class="custom-control-label" for="TOL">TOL</label>
+                            </div>
+                            <div class="custom-control custom-radio mr-4">
+                                <input type="radio" id="Yliopisto" name="tag" class="custom-control-input" value="[Yliopisto] ">
+                                <label class="custom-control-label" for="Yliopisto">Yliopisto</label>
+                            </div>
+                            <div class="custom-control custom-radio mr-4">
+                                <input type="radio" id="OYY" name="tag" class="custom-control-input" value="[OYY] ">
+                                <label class="custom-control-label" for="OYY">OYY</label>
+                            </div>
+                            <div class="custom-control custom-radio mr-4">
+                                <input type="radio" id="Blanko" name="tag" class="custom-control-input" value="[Blanko] ">
+                                <label class="custom-control-label" for="Blanko">Blanko</label>
+                            </div>
+                            <div class="custom-control custom-radio mr-4">
+                                <input type="radio" id="Blankki" name="tag" class="custom-control-input" value="[Blankki] ">
+                                <label class="custom-control-label" for="Blankki">Blankki</label>
+                            </div>
+                        </div>
+                        </div>
                         <div class="row pl-3 pb-2">
-                            <input class="form-check-input" type="checkbox" value="" name="ready" id="verify" />
-                            <label class="form-check-label" for="ready">Ready to go? Remember to add a tag to the title!</label>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" value="" name="ready" id="verify" />
+                                <label class="custom-control-label" for="verify">Ready to go? Remember to select a tag for the title!</label>
+                            </div>
                         </div>
 
                         <button type="submit" class="btn btn-primary disabled mb-2" id="submit_btn">Send</button>
@@ -74,7 +128,7 @@
 
                 <!-- Preview -->
 
-                <div class="col-6 preview">
+                <div class="col-12 col-md-6 preview">
                     <label>Preview</label>
 
                     <nav>

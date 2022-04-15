@@ -7,14 +7,14 @@ use Egulias\EmailValidator\Validation\DNSCheckValidation;
 use Egulias\EmailValidator\Validation\MultipleValidationWithAnd;
 use Egulias\EmailValidator\Validation\RFCValidation;
 
-function send_email_msg($title, $tag, $description, $signature, $reply_to, $url)
+function send_web_msg($title, $tag, $description, $signature, $reply_to, $url)
 {
     include dirname(__FILE__) . "/../../secrets.php";
     $username = $secrets->email_username;
     $password = $secrets->email_password;
     $from_name = $secrets->email_from_name;
     $from_address = $secrets->email_from_address;
-    $send_to = $secrets->email_send_to; // Array
+    $send_to = $secrets->web_send_to; 
     //Load Composer's autoloader
     require "vendor/autoload.php";
 
@@ -46,14 +46,12 @@ function send_email_msg($title, $tag, $description, $signature, $reply_to, $url)
 
         //Recipients
         $mail->setFrom($from_address, $from_name);
-        foreach ($send_to as $email_address) {
-            $mail->addAddress($email_address); //Name is optional
-        }
+        $mail->addAddress($send_to);
         $mail->addReplyTo($reply_to);
 
         //Content
         $mail->isHTML(true); //Set email format to HTML
-        $mail->Subject = $tag.$title;
+        $mail->Subject = $title;
         $mail->Body = nl2br($description . "\n\n" . $signature . "\n");
         $mail->AltBody = nl2br($description . "\n\n" . $signature . "\n");
 
