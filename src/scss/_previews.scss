@@ -9,18 +9,22 @@
 }
 #nav-discord .wrapper {
 	background-color: $discord-background;
-	border-left: 5px solid #ff0000;
-
+	border: solid 1px #FFF;
+	border-top: 0 transparent;
+	border-left: 5px solid $blanko-pink;
+	border-radius: 0 0 0.25rem 0.25rem;
 	color: $discord-text;
 	font-family: 'Roboto', sans-serif;
 }
 #nav-telegram .wrapper {
 	background-color: #fff;
+	border-radius: 0 0 0.25rem 0.25rem;
 	color: #000;
 	font-family: 'Roboto', sans-serif;
 }
 #nav-email .wrapper {
 	background-color: #fff;
+	border-radius: 0 0 0.25rem 0.25rem;
 	color: rgb(32,33,36);
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 0.875rem;
