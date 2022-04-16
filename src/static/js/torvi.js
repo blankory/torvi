@@ -24,10 +24,12 @@ $(document).ready(function ()
 	function run_send_check() {
 		var btn = $("#submit_btn");
 		if ($("#verify").is(":checked") && is_platforms_selected()) {
-			btn.removeClass("disabled")
+			btn.removeClass("disabled");
+			btn.attr('disabled', false);
 		}
 		else {
 			btn.addClass("disabled");
+			btn.attr('disabled', true);
 		}
 		
 	}
@@ -62,13 +64,14 @@ $(document).ready(function ()
 
 		var title = $("#title").val();
 		var tag = $('input[name="tag"]:checked').val();
+		var titleTag = "[" + tag + "]";
 		var description = $("#description").val();
 		var signature = $("#signature").val();
 		var messagelen = description.length + signature.length;
 
-		$('#nav-discord .wrapper h3').text(tag + ' ' + title);
-		$('#nav-telegram .wrapper h3').text(tag + ' ' + title);
-		$('#nav-email .wrapper h3').text(tag + ' ' + title);
+		$('#nav-discord .wrapper h3').text(titleTag + ' ' + title);
+		$('#nav-telegram .wrapper h3').text(titleTag + ' ' + title);
+		$('#nav-email .wrapper h3').text(titleTag + ' ' + title);
 
 		// Discord preview
 		$('#nav-discord .wrapper .description').text(description);

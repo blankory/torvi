@@ -1,5 +1,5 @@
 <?php
-function send_telegram_msg($title, $tag, $description, $url)
+function send_telegram_msg($title, $description, $url)
 {
     include dirname(__FILE__) . "/../../secrets.php";
     $token = $secrets->telegram_token;
@@ -8,7 +8,7 @@ function send_telegram_msg($title, $tag, $description, $url)
     $tgsend = "https://api.telegram.org/bot{$token}/sendMessage";
     $fields = [
         "chat_id" => $group_id,
-        "text" => "<b>{$tag}{$title}</b>\n\n{$description}",
+        "text" => "<b>{$title}</b>\n\n{$description}",
         "parse_mode" => "html", // alternatives: 'markdown'
     ];
 

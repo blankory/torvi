@@ -27,6 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST["title"];
     $description = $_POST["description"];
     $tag = $_POST["tag"];
+    $titleTag = "[" . $tag . "] " . $title;
     $signature = $_POST["signature"];
     $reply_to = $_POST["reply-to"];
     $datetime_start = $datetime_end = $url = "";
@@ -41,13 +42,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Send announcements
     if (isset($_POST["discord"])) {
-        send_discord_msg($title, $tag, $description . "\n\n" . $signature, $url);
+        send_discord_msg($titleTag, $description . "\n\n" . $signature, $url);
     }
     if (isset($_POST["telegram"])) {
-        send_telegram_msg($title, $tag, $description . "\n\n" . $signature, $url);
+        send_telegram_msg($titleTag, $description . "\n\n" . $signature, $url);
     }
     if (isset($_POST["email"])) {
-        $email_response = send_email_msg($title, $tag, $description, $signature, $reply_to, $url);
+        $email_response = send_email_msg($titleTag, $description, $signature, $reply_to, $url);
     }
     if (isset($_POST["blankoweb"])) {
         $email_response = send_web_msg($title, $description, $signature, $reply_to, $url);

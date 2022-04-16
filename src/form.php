@@ -27,20 +27,20 @@
                         <div class="container">
                             <div class="row">
                                     <div class="custom-control custom-switch">
-                                        <input type="checkbox" id="platform_discord" name="discord" value="discord" class="custom-control-input">
-                                        <label class="custom-control-label" for="platform_discord"> Discord</label>
+                                        <input type="checkbox" id="platform_blankoweb" name="blankoweb" value="blankoweb" class="custom-control-input">
+                                        <label class="custom-control-label" for="platform_blankoweb"> Blankoweb</label>
                                     </div>
                                     <div class="custom-control custom-switch">
-                                        <input type="checkbox" id="platform_telegram" name="telegram" value="telegram" class="custom-control-input">
-                                        <label class="custom-control-label" for="platform_telegram"> Telegram</label>
+                                        <input type="checkbox" id="platform_discord" name="discord" value="discord" class="custom-control-input">
+                                        <label class="custom-control-label" for="platform_discord"> Discord</label>
                                     </div>
                                     <div class="custom-control custom-switch">
                                         <input type="checkbox" id="platform_email" name="email" value="email" class="custom-control-input">
                                         <label class="custom-control-label" for="platform_email"> Email</label>
                                     </div>
                                     <div class="custom-control custom-switch">
-                                        <input type="checkbox" id="platform_blankoweb" name="blankoweb" value="blankoweb" class="custom-control-input">
-                                        <label class="custom-control-label" for="platform_blankoweb"> Blankoweb</label>
+                                        <input type="checkbox" id="platform_telegram" name="telegram" value="telegram" class="custom-control-input">
+                                        <label class="custom-control-label" for="platform_telegram"> Telegram</label>
                                     </div>
                             </div>
 			            </div>
@@ -74,48 +74,48 @@
                         <div class="container">
                         <div class="row">
                             <div class="custom-control custom-radio mr-4">
-                                <input type="radio" id="Kulttuuri" name="tag" class="custom-control-input" value="[Kulttuuri] " required>
-                                <label class="custom-control-label" for="Kulttuuri">Kulttuuri</label>
-                            </div>
-                            <div class="custom-control custom-radio mr-4">
-                                <input type="radio" id="Urheilu" name="tag" class="custom-control-input" value="[Urheilu] ">
-                                <label class="custom-control-label" for="Urheilu">Urheilu</label>
-                            </div>
-                            <div class="custom-control custom-radio mr-4">
-                                <input type="radio" id="Tapahtumat" name="tag" class="custom-control-input" value="[Tapahtumat] ">
-                                <label class="custom-control-label" for="Tapahtumat">Tapahtumat</label>
-                            </div>
-                            <div class="custom-control custom-radio mr-4">
-                                <input type="radio" id="Kokoukset" name="tag" class="custom-control-input" value="[Kokoukset] ">
-                                <label class="custom-control-label" for="Kokoukset">Kokoukset</label>
-                            </div>
-                            <div class="custom-control custom-radio mr-4">
-                                <input type="radio" id="Tyopaikat" name="tag" class="custom-control-input" value="[Työpaikat] ">
-                                <label class="custom-control-label" for="Tyopaikat">Työpaikat</label>
-                            </div>
-                            <div class="custom-control custom-radio mr-4">
-                                <input type="radio" id="TOL" name="tag" class="custom-control-input" value="[TOL] ">
-                                <label class="custom-control-label" for="TOL">TOL</label>
-                            </div>
-                            <div class="custom-control custom-radio mr-4">
-                                <input type="radio" id="Yliopisto" name="tag" class="custom-control-input" value="[Yliopisto] ">
-                                <label class="custom-control-label" for="Yliopisto">Yliopisto</label>
-                            </div>
-                            <div class="custom-control custom-radio mr-4">
-                                <input type="radio" id="OYY" name="tag" class="custom-control-input" value="[OYY] ">
-                                <label class="custom-control-label" for="OYY">OYY</label>
-                            </div>
-                            <div class="custom-control custom-radio mr-4">
-                                <input type="radio" id="Blanko" name="tag" class="custom-control-input" value="[Blanko] ">
+                                <input type="radio" id="Blanko" name="tag" class="custom-control-input" value="Blanko">
                                 <label class="custom-control-label" for="Blanko">Blanko</label>
                             </div>
                             <div class="custom-control custom-radio mr-4">
-                                <input type="radio" id="Blankki" name="tag" class="custom-control-input" value="[Blankki] ">
+                                <input type="radio" id="Blankki" name="tag" class="custom-control-input" value="Blankki">
                                 <label class="custom-control-label" for="Blankki">Blankki</label>
+                            </div>
+                            <div class="custom-control custom-radio mr-4">
+                                <input type="radio" id="Kokoukset" name="tag" class="custom-control-input" value="Kokoukset">
+                                <label class="custom-control-label" for="Kokoukset">Kokoukset</label>
+                            </div>
+                            <div class="custom-control custom-radio mr-4">
+                                <input type="radio" id="Kulttuuri" name="tag" class="custom-control-input" value="Kulttuuri" required>
+                                <label class="custom-control-label" for="Kulttuuri">Kulttuuri</label>
+                            </div>
+                            <div class="custom-control custom-radio mr-4">
+                                <input type="radio" id="OYY" name="tag" class="custom-control-input" value="OYY">
+                                <label class="custom-control-label" for="OYY">OYY</label>
+                            </div>
+                            <div class="custom-control custom-radio mr-4">
+                                <input type="radio" id="Tapahtumat" name="tag" class="custom-control-input" value="Tapahtumat">
+                                <label class="custom-control-label" for="Tapahtumat">Tapahtumat</label>
+                            </div>
+                            <div class="custom-control custom-radio mr-4">
+                                <input type="radio" id="TOL" name="tag" class="custom-control-input" value="TOL">
+                                <label class="custom-control-label" for="TOL">TOL</label>
+                            </div>
+                            <div class="custom-control custom-radio mr-4">
+                                <input type="radio" id="Tyopaikat" name="tag" class="custom-control-input" value="Työpaikat">
+                                <label class="custom-control-label" for="Tyopaikat">Työpaikat</label>
+                            </div>
+                            <div class="custom-control custom-radio mr-4">
+                                <input type="radio" id="Urheilu" name="tag" class="custom-control-input" value="Urheilu">
+                                <label class="custom-control-label" for="Urheilu">Urheilu</label>
+                            </div>
+                            <div class="custom-control custom-radio mr-4">
+                                <input type="radio" id="Yliopisto" name="tag" class="custom-control-input" value="Yliopisto">
+                                <label class="custom-control-label" for="Yliopisto">Yliopisto</label>
                             </div>
                         </div>
                         </div>
-                        <div class="row pl-3 pb-2">
+                        <div class="row pl-3 pb-2 my-3">
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input" type="checkbox" value="" name="ready" id="verify" />
                                 <label class="custom-control-label" for="verify">Ready to go? Remember to select a tag for the title!</label>

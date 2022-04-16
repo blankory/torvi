@@ -7,7 +7,7 @@ use Egulias\EmailValidator\Validation\DNSCheckValidation;
 use Egulias\EmailValidator\Validation\MultipleValidationWithAnd;
 use Egulias\EmailValidator\Validation\RFCValidation;
 
-function send_web_msg($title, $tag, $description, $signature, $reply_to, $url)
+function send_web_msg($title, $description, $signature, $reply_to, $url)
 {
     include dirname(__FILE__) . "/../../secrets.php";
     $username = $secrets->email_username;
