@@ -12,7 +12,7 @@
         } ?>
 
             <div class="row align-items-start">
-                <div class="col-12 col-md-6 main-wrap form-group">
+                <div class="col-12 col-lg-6 main-wrap form-group">
                     <form method="post" action="index.php">
                         <label for="title">Title</label>
                         <input id="title" name="title" class="form-control form-control-lg bg-dark text-white" required="" />
@@ -128,7 +128,7 @@
 
                 <!-- Preview -->
 
-                <div class="col-12 col-md-6 preview">
+                <div class="col-12 col-lg-6 preview">
                     <label>Preview</label>
 
                     <nav>
