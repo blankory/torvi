@@ -23,12 +23,19 @@ label {
 	font-style: "Comic Sans MS", "Comic Sans", cursive;
 	color: $blanko-pink;
 }
+.custom-control label {
+	font-size: initial;
+}
+.custom-control-input:checked ~ .custom-control-label::before {
+	background-color: $blanko-pink;
+	border-color: $blanko-pink;
+}
 
 
 img.margin_right {
 		position: absolute;
-		bottom: -25px;
-		right: -20px;
+		bottom: 0;
+		right: 0;
 		opacity: 0.5;
 }
 

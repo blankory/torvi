@@ -6,6 +6,7 @@ require_once dirname(__FILE__) . "/form.php";
 require_once dirname(__FILE__) . "/integrations/discord.msg.send.php";
 require_once dirname(__FILE__) . "/integrations/telegram.msg.send.php";
 require_once dirname(__FILE__) . "/integrations/email.msg.send.php";
+require_once dirname(__FILE__) . "/integrations/web.msg.send.php";
 //require_once 'gcal.add.php';
 
 $protocol = $_SERVER["HTTPS"] == "on" ? "https" : "http";
@@ -17,13 +18,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         !isset($_POST["description"]) ||
         !isset($_POST["signature"]) ||
         !isset($_POST["reply-to"]) ||
-        !isset($_POST["ready"])
+        !isset($_POST["ready"]) ||
+        !isset($_POST["tag"])
     ) {
         header("Location: {$redirect_url}/index.php?status=error", true, 301);
     }
 
     $title = $_POST["title"];
     $description = $_POST["description"];
+    $tag = $_POST["tag"];
+    $titleTag = "[" . $tag . "] " . $title;
     $signature = $_POST["signature"];
     $reply_to = $_POST["reply-to"];
     $datetime_start = $datetime_end = $url = "";
@@ -38,13 +42,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Send announcements
     if (isset($_POST["discord"])) {
-        send_discord_msg($title, $description . "\n\n" . $signature, $url);
+        send_discord_msg($titleTag, $description . "\n\n" . $signature, $url);
     }
     if (isset($_POST["telegram"])) {
-        send_telegram_msg($title, $description . "\n\n" . $signature, $url);
+        send_telegram_msg($titleTag, $description . "\n\n" . $signature, $url);
     }
     if (isset($_POST["email"])) {
-        $email_response = send_email_msg($title, $description, $signature, $reply_to, $url);
+        $email_response = send_email_msg($titleTag, $description, $signature, $reply_to, $url);
+    }
+    if (isset($_POST["blankoweb"])) {
+        $email_response = send_web_msg($title, $description, $signature, $reply_to, $url);
     }
 
     if( $email_response != ""){

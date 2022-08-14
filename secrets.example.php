@@ -8,6 +8,7 @@ $secrets = (object) [
     "email_from_address" => "announcements-noreply@your.domain.tld",
     "email_from_name" => "Your Company announcements",
     "email_send_to" => ["email-group-1@your.domain.tld", "email-group-2@your.domain.tld"],
+    "web_send_to" => "webemail@your.domain.tld",
     "google_developer_key" => "AAAAAABBBBBCCCCCDDDDD",
 ];
 
