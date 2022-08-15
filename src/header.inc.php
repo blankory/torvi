@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/popper.js/dist/popper.min.js" type="module"></script>
+    <script src="node_modules/@popperjs/core/dist/umd/popper.min.js" type="module"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="node_modules/datetimepicker/dist/DateTimePicker.css" />

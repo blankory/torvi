@@ -1,6 +1,5 @@
 body {
 	background-color: $blanko-blue;
-	
 }
 
 h1, 
@@ -8,7 +7,6 @@ p,
 span {
 	color: #fff;
 }
-
 
 .preview {
 	word-wrap: break-word;
@@ -23,10 +21,12 @@ label {
 	font-style: "Comic Sans MS", "Comic Sans", cursive;
 	color: $blanko-pink;
 }
-.custom-control label {
+
+.form-check label {
 	font-size: initial;
 }
-.custom-control-input:checked ~ .custom-control-label::before {
+
+.form-check .form-check-input:checked {
 	background-color: $blanko-pink;
 	border-color: $blanko-pink;
 }
@@ -37,10 +37,4 @@ img.margin_right {
 		bottom: 0;
 		right: 0;
 		opacity: 0.5;
-}
-
-.form-check-label,
-input[type=checkbox] {
-	position: relative;
-	margin: .5rem .5rem 0 0;
 }

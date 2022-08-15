@@ -1,14 +1,13 @@
 'use strict';
  
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+var sass = require('gulp-sass')(require('sass'));
 var cleanCss = require('gulp-clean-css');
 var rename = require('gulp-rename');
 var scsslint = require('gulp-scss-lint');
 //const postcss = require('gulp-postcss');
 const autoprefixer = require('gulp-autoprefixer');
 
-sass.compiler = require('node-sass');
  
 
 var paths = {
