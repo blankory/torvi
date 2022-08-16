@@ -133,9 +133,9 @@
 
                     <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <a class="nav-item nav-link active" id="nav-discord-tab" data-toggle="tab" href="#nav-discord" role="tab" aria-controls="nav-discord" aria-selected="true">Discord #ilmoitustaulu</a>
-                            <a class="nav-item nav-link" id="nav-telegram-tab" data-toggle="tab" href="#nav-telegram" role="tab" aria-controls="nav-telegram" aria-selected="false">Telegram</a>
-                            <a class="nav-item nav-link" id="nav-email-tab" data-toggle="tab" href="#nav-email" role="tab" aria-controls="nav-email" aria-selected="false">Email</a>
+                            <a class="nav-item nav-link active" id="nav-discord-tab" data-bs-toggle="tab" data-bs-target="#nav-discord" role="tab" aria-controls="nav-discord" aria-selected="true">Discord #ilmoitustaulu</a>
+                            <a class="nav-item nav-link" id="nav-telegram-tab" data-bs-toggle="tab" data-bs-target="#nav-telegram" role="tab" aria-controls="nav-telegram" aria-selected="false">Telegram</a>
+                            <a class="nav-item nav-link" id="nav-email-tab" data-bs-toggle="tab" data-bs-target="#nav-email" role="tab" aria-controls="nav-email" aria-selected="false">Email</a>
                         </div>
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
