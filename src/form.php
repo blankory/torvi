@@ -12,35 +12,35 @@
         } ?>
 
             <div class="row align-items-start">
-                <div class="col-12 col-md-6 main-wrap form-group">
+                <div class="col-12 col-lg-6 main-wrap">
                     <form method="post" action="index.php">
-                        <label for="title">Title</label>
+                        <label for="title" class="mb-2">Title</label>
                         <input id="title" name="title" class="form-control form-control-lg bg-dark text-white" required="" />
-                        <label for="description">Description</label>
+                        <label for="description" class="mb-2">Description</label>
                         <textarea id="description" name="description" class="form-control bg-dark text-white" required="" rows="15"></textarea>
-                        <label for="signature">Signature</label>
+                        <label for="signature" class="mb-2">Signature</label>
                         <textarea id="signature" name="signature" class="form-control bg-dark text-white" required="" rows="5"></textarea>
                         <span class="char_count">max. 2000 chars</span>
                         <br />
 
                         <label for="platforms">Send this to:</label> <br />
                         <div class="container">
-                            <div class="row">
-                                    <div class="custom-control custom-switch">
-                                        <input type="checkbox" id="platform_blankoweb" name="blankoweb" value="blankoweb" class="custom-control-input">
-                                        <label class="custom-control-label" for="platform_blankoweb"> Blankoweb</label>
+                            <div class="">
+                                    <div class="form-check form-switch form-check-inline">
+                                        <input type="checkbox" id="platform_blankoweb" name="blankoweb" value="blankoweb" class="form-check-input">
+                                        <label class="form-check-label" for="platform_blankoweb"> Blankoweb</label>
                                     </div>
-                                    <div class="custom-control custom-switch">
-                                        <input type="checkbox" id="platform_discord" name="discord" value="discord" class="custom-control-input">
-                                        <label class="custom-control-label" for="platform_discord"> Discord</label>
+                                    <div class="form-check form-switch form-check-inline">
+                                        <input type="checkbox" id="platform_discord" name="discord" value="discord" class="form-check-input">
+                                        <label class="form-check-label" for="platform_discord"> Discord</label>
                                     </div>
-                                    <div class="custom-control custom-switch">
-                                        <input type="checkbox" id="platform_email" name="email" value="email" class="custom-control-input">
-                                        <label class="custom-control-label" for="platform_email"> Email</label>
+                                    <div class="form-check form-switch form-check-inline">
+                                        <input type="checkbox" id="platform_email" name="email" value="email" class="form-check-input">
+                                        <label class="form-check-label" for="platform_email"> Email</label>
                                     </div>
-                                    <div class="custom-control custom-switch">
-                                        <input type="checkbox" id="platform_telegram" name="telegram" value="telegram" class="custom-control-input">
-                                        <label class="custom-control-label" for="platform_telegram"> Telegram</label>
+                                    <div class="form-check form-switch form-check-inline">
+                                        <input type="checkbox" id="platform_telegram" name="telegram" value="telegram" class="form-check-input">
+                                        <label class="form-check-label" for="platform_telegram"> Telegram</label>
                                     </div>
                             </div>
 			            </div>
@@ -68,57 +68,57 @@
 </div>
 
 -->
-                        <label for="reply-to">Reply-to</label>
+                        <label for="reply-to" class="mb-2">Reply-to</label>
                         <input id="reply-to" name="reply-to" class="form-control form-control-lg bg-dark text-white" placeholder="for example: tapahtumavastaava@blanko.fi" required="" />
-                        <label for="tags">Tag</label> <br/>
+                        <label for="tags" class="mb-2">Tag</label> <br/>
                         <div class="container">
-                        <div class="row">
-                            <div class="custom-control custom-radio mr-4">
-                                <input type="radio" id="Blanko" name="tag" class="custom-control-input" value="Blanko">
-                                <label class="custom-control-label" for="Blanko">Blanko</label>
+                        <div class="">
+                            <div class="form-check form-check-inline mr-4">
+                                <input type="radio" id="Blanko" name="tag" class="form-check-input" value="Blanko">
+                                <label class="form-check-label" for="Blanko">Blanko</label>
                             </div>
-                            <div class="custom-control custom-radio mr-4">
-                                <input type="radio" id="Blankki" name="tag" class="custom-control-input" value="Blankki">
-                                <label class="custom-control-label" for="Blankki">Blankki</label>
+                            <div class="form-check form-check-inline mr-4">
+                                <input type="radio" id="Blankki" name="tag" class="form-check-input" value="Blankki">
+                                <label class="form-check-label" for="Blankki">Blankki</label>
                             </div>
-                            <div class="custom-control custom-radio mr-4">
-                                <input type="radio" id="Kokoukset" name="tag" class="custom-control-input" value="Kokoukset">
-                                <label class="custom-control-label" for="Kokoukset">Kokoukset</label>
+                            <div class="form-check form-check-inline mr-4">
+                                <input type="radio" id="Kokoukset" name="tag" class="form-check-input" value="Kokoukset">
+                                <label class="form-check-label" for="Kokoukset">Kokoukset</label>
                             </div>
-                            <div class="custom-control custom-radio mr-4">
-                                <input type="radio" id="Kulttuuri" name="tag" class="custom-control-input" value="Kulttuuri" required>
-                                <label class="custom-control-label" for="Kulttuuri">Kulttuuri</label>
+                            <div class="form-check form-check-inline mr-4">
+                                <input type="radio" id="Kulttuuri" name="tag" class="form-check-input" value="Kulttuuri" required>
+                                <label class="form-check-label" for="Kulttuuri">Kulttuuri</label>
                             </div>
-                            <div class="custom-control custom-radio mr-4">
-                                <input type="radio" id="OYY" name="tag" class="custom-control-input" value="OYY">
-                                <label class="custom-control-label" for="OYY">OYY</label>
+                            <div class="form-check form-check-inline mr-4">
+                                <input type="radio" id="OYY" name="tag" class="form-check-input" value="OYY">
+                                <label class="form-check-label" for="OYY">OYY</label>
                             </div>
-                            <div class="custom-control custom-radio mr-4">
-                                <input type="radio" id="Tapahtumat" name="tag" class="custom-control-input" value="Tapahtumat">
-                                <label class="custom-control-label" for="Tapahtumat">Tapahtumat</label>
+                            <div class="form-check form-check-inline mr-4">
+                                <input type="radio" id="Tapahtumat" name="tag" class="form-check-input" value="Tapahtumat">
+                                <label class="form-check-label" for="Tapahtumat">Tapahtumat</label>
                             </div>
-                            <div class="custom-control custom-radio mr-4">
-                                <input type="radio" id="TOL" name="tag" class="custom-control-input" value="TOL">
-                                <label class="custom-control-label" for="TOL">TOL</label>
+                            <div class="form-check form-check-inline mr-4">
+                                <input type="radio" id="TOL" name="tag" class="form-check-input" value="TOL">
+                                <label class="form-check-label" for="TOL">TOL</label>
                             </div>
-                            <div class="custom-control custom-radio mr-4">
-                                <input type="radio" id="Tyopaikat" name="tag" class="custom-control-input" value="Työpaikat">
-                                <label class="custom-control-label" for="Tyopaikat">Työpaikat</label>
+                            <div class="form-check form-check-inline mr-4">
+                                <input type="radio" id="Tyopaikat" name="tag" class="form-check-input" value="Työpaikat">
+                                <label class="form-check-label" for="Tyopaikat">Työpaikat</label>
                             </div>
-                            <div class="custom-control custom-radio mr-4">
-                                <input type="radio" id="Urheilu" name="tag" class="custom-control-input" value="Urheilu">
-                                <label class="custom-control-label" for="Urheilu">Urheilu</label>
+                            <div class="form-check form-check-inline mr-4">
+                                <input type="radio" id="Urheilu" name="tag" class="form-check-input" value="Urheilu">
+                                <label class="form-check-label" for="Urheilu">Urheilu</label>
                             </div>
-                            <div class="custom-control custom-radio mr-4">
-                                <input type="radio" id="Yliopisto" name="tag" class="custom-control-input" value="Yliopisto">
-                                <label class="custom-control-label" for="Yliopisto">Yliopisto</label>
+                            <div class="form-check form-check-inline mr-4">
+                                <input type="radio" id="Yliopisto" name="tag" class="form-check-input" value="Yliopisto">
+                                <label class="form-check-label" for="Yliopisto">Yliopisto</label>
                             </div>
                         </div>
                         </div>
-                        <div class="row pl-3 pb-2 my-3">
-                            <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" value="" name="ready" id="verify" />
-                                <label class="custom-control-label" for="verify">Ready to go? Remember to select a tag for the title!</label>
+                        <div class="pl-3 pb-2 my-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" name="ready" id="verify" />
+                                <label class="form-check-label" for="verify">Ready to go? Remember to select a tag for the title!</label>
                             </div>
                         </div>
 
@@ -128,7 +128,7 @@
 
                 <!-- Preview -->
 
-                <div class="col-12 col-md-6 preview">
+                <div class="col-12 col-lg-6 preview">
                     <label>Preview</label>
 
                     <nav>
