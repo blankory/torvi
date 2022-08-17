@@ -6,7 +6,7 @@ Tiedotustorvi is a tool created for active members of Blanko ry, to keep their h
 
 ## Prerequisites
 
-- [nodejs](https://nodejs.org/en/)
+- [Node.js v16.x](https://nodejs.org/en/)
 - [npm](https://www.npmjs.com/)
 - [PHP 7.4 or greater](https://www.php.net/)
 - [Composer](https://getcomposer.org/)
