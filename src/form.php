@@ -48,26 +48,9 @@
                     <label for="url">URL</label>
                     <input id="url" name="url" class="form-control form-control-lg bg-dark text-white" placeholder="optional" />
                     -->
-                        <!--<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" name="calendar_check" id="calendar_check" onclick="$('#calendar_group').toggle();">
-  <label class="form-check-label" for="calendar_check">
-    Calendar item
-  </label>
-</div>
 
-<div id="calendar_group" class="collapse">
 
-                    <label for="datetime_start">Starting time</label>
-                    <input id="datetime_start"
-                                name="datetime_start" class="form-control col-lg-6 form-control-lg bg-dark text-white" data-field="datetime" readonly />
-                        <div id="dt_start"></div>
-                    <label for="datetime_end">Ending time</label>
-                    <input id="datetime_end" name="datetime_end" class="form-control col-lg-6 form-control-lg bg-dark text-white" data-field="datetime" readonly />
-                        <div id="dt_end"></div>
 
-</div>
-
--->
                         <label for="reply-to" class="mb-2">Reply-to</label>
                         <input id="reply-to" name="reply-to" class="form-control form-control-lg bg-dark text-white" placeholder="for example: tapahtumavastaava@blanko.fi" required="" />
                         <label for="tags" class="mb-2">Tag</label> <br/>
@@ -115,14 +98,33 @@
                             </div>
                         </div>
                         </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="false" name="scheduler_check" id="scheduler_checkbox" onclick="$('#scheduler_group').toggle();">
+                        <label class="form-check-label" for="scheduler_check">
+                            Scheduled message (opens date picker)
+                        </label>
+                        </div>
+
+                        <div id="scheduler_group" class="collapse">
+
+                        <label for="scheduled_time">Schedule message</label>
+                        <input id="scheduled_time"
+                                    name="scheduled_time" class="form-control col-lg-6 form-control-lg bg-dark text-white" data-field="datetime" placeholder="Click here to pick the time" readonly required="" />
+                            <div id="dt_start"></div>
+                        
+
+</div>
+
                         <div class="pl-3 pb-2 my-3">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" name="ready" id="verify" />
                                 <label class="form-check-label" for="verify">Ready to go? Remember to select a tag for the title!</label>
                             </div>
                         </div>
-
-                        <button type="submit" class="btn btn-primary disabled mb-2" id="submit_btn">Send</button>
+                        
+                        <button type="submit" class="btn btn-primary mb-2 disabled submit-button" id="submit_btn_instant">Send instantly</button>
+                        <button type="submit" class="btn btn-primary mb-2 disabled submit-button" id="submit_btn_schedule">Schedule message</button>
+                        
                     </form>
                 </div>
 
