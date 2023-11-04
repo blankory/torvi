@@ -1,7 +1,6 @@
 <?php
 
 function image_tp_web($imageUrl, $imageName, $password, $login, $site) {
-
     $file = file_get_contents( $imageUrl );
     $url = "{$site}/wp-json/wp/v2/media";
 
@@ -21,19 +20,51 @@ function image_tp_web($imageUrl, $imageName, $password, $login, $site) {
     return $response->{'id'};
 }
 
-function post_to_web($title, $description, $imageUrl, $imageName) {
+function get_category($tag) {
+    $tagID;
+    switch ($tag) {
+        case "Blanko":
+            $tagID = '1';
+            break;
+        case "Blankki":
+            $tagID = '10';
+            break;        
+        case "Kokoukset":
+            $tagID = '6';
+            break;        
+        case "Kulttuuri":
+            $tagID = '29';
+            break;      
+        case "Tapahtumat":
+            $tagID = '7';
+            break;
+        case "Urheilu":
+            $tagID = '31';
+            break;
+        default:
+            $tagID = '1';
+    }
+    return $tagID;
+}
+
+function post_to_web($title, $description, $tag, $imageUrl, $imageName) {
     include dirname(__FILE__) . "/../../secrets.php";
     $login =  $secrets->wp_username;
     $password = $secrets->wp_password;
     $site = $secrets->wp_address;
     $url = "{$site}/wp-json/wp/v2/posts";
-    $imageId = image_tp_web($imageUrl, $imageName, $password, $login, $site);
+    $tagID = get_category($tag);
+    
+    $imageId = $imageUrl ? image_tp_web($imageUrl, $imageName, $password, $login, $site) : '';
+
     $params = array(
             'title'   => $title,
             'content'  => $description,
-            'status' => 'draft',
-            'featured_media' => $imageId
+            'status' => 'publish',
+            'categories' => $tagID,
     );
+    if ($imageId != '') $params['featured_media'] = $imageId;
+
     $content = json_encode($params);
 
     $ch = curl_init($url);

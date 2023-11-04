@@ -116,7 +116,8 @@
                             </div>
                         </div>
                         <div class="pl-3 pb-2 my-3">
-                                <input type="file" name="featuredimage" id="featuredImage">
+                                <label for="featuredImage" class="form-label">Featured image for website</label>
+                                <input type="file" class="form-control" name="featuredimage" id="featuredImage" accept="image/png, image/jpeg">
                         </div>
                         <div class="pl-3 pb-2 my-3">
                             <div class="form-check">

@@ -108,4 +108,5 @@ $(document).ready(function ()
 	{
 		update_preview();
 	});
+
 });

@@ -33,6 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $datetime_start = $datetime_end = $url = "";
     $imageUrl = $_FILES['featuredimage']['tmp_name'];
     $imageName = $_FILES['featuredimage']['name'];
+    $imageType = $_FILES['featuredimage']['type'];
+    $email_response = "";
 
     // preprocess form info
     if (isset($_POST["url"])) {
@@ -53,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email_response = send_email_msg($titleTag, $description, $signature, $reply_to, $url);
     }
     if (isset($_POST["blankoweb"])) {
-        post_to_web($title, $description, $imageUrl, $imageName);
+        post_to_web($title, $description, $tag, $imageUrl, $imageName);
     }
 
     if( $email_response != ""){
