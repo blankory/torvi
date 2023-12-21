@@ -1,6 +1,6 @@
 <?php
 
-function image_tp_web($imageUrl, $imageName, $password, $login, $site) {
+function image_to_web($imageUrl, $imageName, $password, $login, $site) {
     $file = file_get_contents( $imageUrl );
     $url = "{$site}/wp-json/wp/v2/media";
 
@@ -55,7 +55,7 @@ function post_to_web($title, $description, $tag, $imageUrl, $imageName) {
     $url = "{$site}/wp-json/wp/v2/posts";
     $tagID = get_category($tag);
     
-    $imageId = $imageUrl ? image_tp_web($imageUrl, $imageName, $password, $login, $site) : '';
+    $imageId = $imageUrl ? image_to_web($imageUrl, $imageName, $password, $login, $site) : '';
 
     $params = array(
             'title'   => $title,
