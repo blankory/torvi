@@ -9,6 +9,9 @@ $secrets = (object) [
     "email_from_name" => "Your Company announcements",
     "email_send_to" => ["email-group-1@your.domain.tld", "email-group-2@your.domain.tld"],
     "web_send_to" => "webemail@your.domain.tld",
+    "wp_username" => "wpuser",
+    "wp_password" => "wppassword",
+    "wp_address" => "siteaddress",
     "google_developer_key" => "AAAAAABBBBBCCCCCDDDDD",
 ];
 

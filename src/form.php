@@ -13,7 +13,7 @@
 
             <div class="row align-items-start">
                 <div class="col-12 col-lg-6 main-wrap">
-                    <form method="post" action="index.php">
+                    <form method="post" action="index.php" enctype="multipart/form-data">
                         <label for="title" class="mb-2">Title</label>
                         <input id="title" name="title" class="form-control form-control-lg bg-dark text-white" required="" />
                         <label for="description" class="mb-2">Description</label>
@@ -72,48 +72,52 @@
                         <input id="reply-to" name="reply-to" class="form-control form-control-lg bg-dark text-white" placeholder="for example: tapahtumavastaava@blanko.fi" required="" />
                         <label for="tags" class="mb-2">Tag</label> <br/>
                         <div class="container">
-                        <div class="">
-                            <div class="form-check form-check-inline mr-4">
-                                <input type="radio" id="Blanko" name="tag" class="form-check-input" value="Blanko">
-                                <label class="form-check-label" for="Blanko">Blanko</label>
-                            </div>
-                            <div class="form-check form-check-inline mr-4">
-                                <input type="radio" id="Blankki" name="tag" class="form-check-input" value="Blankki">
-                                <label class="form-check-label" for="Blankki">Blankki</label>
-                            </div>
-                            <div class="form-check form-check-inline mr-4">
-                                <input type="radio" id="Kokoukset" name="tag" class="form-check-input" value="Kokoukset">
-                                <label class="form-check-label" for="Kokoukset">Kokoukset</label>
-                            </div>
-                            <div class="form-check form-check-inline mr-4">
-                                <input type="radio" id="Kulttuuri" name="tag" class="form-check-input" value="Kulttuuri" required>
-                                <label class="form-check-label" for="Kulttuuri">Kulttuuri</label>
-                            </div>
-                            <div class="form-check form-check-inline mr-4">
-                                <input type="radio" id="OYY" name="tag" class="form-check-input" value="OYY">
-                                <label class="form-check-label" for="OYY">OYY</label>
-                            </div>
-                            <div class="form-check form-check-inline mr-4">
-                                <input type="radio" id="Tapahtumat" name="tag" class="form-check-input" value="Tapahtumat">
-                                <label class="form-check-label" for="Tapahtumat">Tapahtumat</label>
-                            </div>
-                            <div class="form-check form-check-inline mr-4">
-                                <input type="radio" id="TOL" name="tag" class="form-check-input" value="TOL">
-                                <label class="form-check-label" for="TOL">TOL</label>
-                            </div>
-                            <div class="form-check form-check-inline mr-4">
-                                <input type="radio" id="Tyopaikat" name="tag" class="form-check-input" value="Työpaikat">
-                                <label class="form-check-label" for="Tyopaikat">Työpaikat</label>
-                            </div>
-                            <div class="form-check form-check-inline mr-4">
-                                <input type="radio" id="Urheilu" name="tag" class="form-check-input" value="Urheilu">
-                                <label class="form-check-label" for="Urheilu">Urheilu</label>
-                            </div>
-                            <div class="form-check form-check-inline mr-4">
-                                <input type="radio" id="Yliopisto" name="tag" class="form-check-input" value="Yliopisto">
-                                <label class="form-check-label" for="Yliopisto">Yliopisto</label>
+                            <div class="">
+                                <div class="form-check form-check-inline mr-4">
+                                    <input type="radio" id="Blanko" name="tag" class="form-check-input" value="Blanko">
+                                    <label class="form-check-label" for="Blanko">Blanko</label>
+                                </div>
+                                <div class="form-check form-check-inline mr-4">
+                                    <input type="radio" id="Blankki" name="tag" class="form-check-input" value="Blankki">
+                                    <label class="form-check-label" for="Blankki">Blankki</label>
+                                </div>
+                                <div class="form-check form-check-inline mr-4">
+                                    <input type="radio" id="Kokoukset" name="tag" class="form-check-input" value="Kokoukset">
+                                    <label class="form-check-label" for="Kokoukset">Kokoukset</label>
+                                </div>
+                                <div class="form-check form-check-inline mr-4">
+                                    <input type="radio" id="Kulttuuri" name="tag" class="form-check-input" value="Kulttuuri" required>
+                                    <label class="form-check-label" for="Kulttuuri">Kulttuuri</label>
+                                </div>
+                                <div class="form-check form-check-inline mr-4">
+                                    <input type="radio" id="OYY" name="tag" class="form-check-input" value="OYY">
+                                    <label class="form-check-label" for="OYY">OYY</label>
+                                </div>
+                                <div class="form-check form-check-inline mr-4">
+                                    <input type="radio" id="Tapahtumat" name="tag" class="form-check-input" value="Tapahtumat">
+                                    <label class="form-check-label" for="Tapahtumat">Tapahtumat</label>
+                                </div>
+                                <div class="form-check form-check-inline mr-4">
+                                    <input type="radio" id="TOL" name="tag" class="form-check-input" value="TOL">
+                                    <label class="form-check-label" for="TOL">TOL</label>
+                                </div>
+                                <div class="form-check form-check-inline mr-4">
+                                    <input type="radio" id="Tyopaikat" name="tag" class="form-check-input" value="Työpaikat">
+                                    <label class="form-check-label" for="Tyopaikat">Työpaikat</label>
+                                </div>
+                                <div class="form-check form-check-inline mr-4">
+                                    <input type="radio" id="Urheilu" name="tag" class="form-check-input" value="Urheilu">
+                                    <label class="form-check-label" for="Urheilu">Urheilu</label>
+                                </div>
+                                <div class="form-check form-check-inline mr-4">
+                                    <input type="radio" id="Yliopisto" name="tag" class="form-check-input" value="Yliopisto">
+                                    <label class="form-check-label" for="Yliopisto">Yliopisto</label>
+                                </div>
                             </div>
                         </div>
+                        <div class="pl-3 pb-2 my-3">
+                                <label for="featuredImage" class="form-label">Featured image for website</label>
+                                <input type="file" class="form-control" name="featuredimage" id="featuredImage" accept="image/png, image/jpeg">
                         </div>
                         <div class="pl-3 pb-2 my-3">
                             <div class="form-check">

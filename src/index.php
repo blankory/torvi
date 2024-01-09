@@ -6,7 +6,7 @@ require_once dirname(__FILE__) . "/form.php";
 require_once dirname(__FILE__) . "/integrations/discord.msg.send.php";
 require_once dirname(__FILE__) . "/integrations/telegram.msg.send.php";
 require_once dirname(__FILE__) . "/integrations/email.msg.send.php";
-require_once dirname(__FILE__) . "/integrations/web.msg.send.php";
+require_once dirname(__FILE__) . "/integrations/web.msg.post.php";
 //require_once 'gcal.add.php';
 
 $protocol = $_SERVER["HTTPS"] == "on" ? "https" : "http";
@@ -31,6 +31,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $signature = $_POST["signature"];
     $reply_to = $_POST["reply-to"];
     $datetime_start = $datetime_end = $url = "";
+    $imageUrl = $_FILES['featuredimage']['tmp_name'];
+    $imageName = $_FILES['featuredimage']['name'];
+    $imageType = $_FILES['featuredimage']['type'];
+    $email_response = "";
 
     // preprocess form info
     if (isset($_POST["url"])) {
@@ -51,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email_response = send_email_msg($titleTag, $description, $signature, $reply_to, $url);
     }
     if (isset($_POST["blankoweb"])) {
-        $email_response = send_web_msg($title, $description, $signature, $reply_to, $url);
+        post_to_web($title, $description, $tag, $imageUrl, $imageName);
     }
 
     if( $email_response != ""){
