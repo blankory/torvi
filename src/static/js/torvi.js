@@ -75,8 +75,11 @@ $(document).ready(function ()
 
 		// Discord preview
 		$('#nav-discord .wrapper .description').text(description);
+		$('#nav-discord .wrapper .signature').text(signature);
+		
 		// Telegram preview
 		$('#nav-telegram .wrapper .description').text(description);
+		$('#nav-telegram .wrapper .signature').text(signature);
 
 		// Email preview. Header, description, signature
 		$('#nav-email .wrapper .header').text(email_header_preview());
