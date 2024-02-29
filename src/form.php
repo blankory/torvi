@@ -147,12 +147,14 @@
                             <div class="wrapper">
                                 <h3>Title goes here, start writing</h3>
                                 <div class="description"></div>
+				<div class="signature"></div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="nav-telegram" role="tabpanel" aria-labelledby="nav-telegram-tab">
                             <div class="wrapper">
                                 <h3>Title goes here, start writing</h3>
                                 <div class="description"></div>
+				<div class="signature"></div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="nav-email" role="tabpanel" aria-labelledby="nav-email-tab">
