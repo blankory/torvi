@@ -1,6 +1,6 @@
 # Tiedotustorvi
 
-![Project image](https://raw.githubusercontent.com/blankory/torvi/main/demo.PNG?token=AB5UXYJWXKEGQQNF2S5M5DTAG2BJG)
+![Project image](https://github.com/blankory/torvi/blob/main/demo.PNG?raw=true)
 
 Tiedotustorvi is a tool created for active members of Blanko ry, to keep their hundreds of members up-to-date with announcements, event information and other happenings. The application sends announcements to Discord, Telegram and email lists - all of this via one click.
 
