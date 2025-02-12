@@ -1,14 +1,19 @@
 <?php
-function send_telegram_msg($title, $description, $url)
-{
+function escapeTelegramMessage(string $message): string {
+    return htmlspecialchars($message, ENT_NOQUOTES | ENT_HTML5, 'UTF-8');
+}
+
+function send_telegram_msg(string $title, string $description, string $url): void {
     include dirname(__FILE__) . "/../../secrets.php";
     $token = $secrets->telegram_token;
     $group_id = $secrets->telegram_group_id;
+    $escaped_title = escapeTelegramMessage($title);
+    $escaped_desc = escapeTelegramMessage($description);
 
     $tgsend = "https://api.telegram.org/bot{$token}/sendMessage";
     $fields = [
         "chat_id" => $group_id,
-        "text" => "<b>{$title}</b>\n\n{$description}",
+        "text" => "<b>{$escaped_title}</b>\n\n{$escaped_desc}",
         "parse_mode" => "html", // alternatives: 'markdown'
     ];
 
