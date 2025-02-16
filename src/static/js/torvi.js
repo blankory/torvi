@@ -1,115 +1,98 @@
-$(document).ready(function ()
-{
-	var isPlatformsSelected = false;
-	// disable enter on other places than textarea
-	$(document).on("keydown", ":input:not(textarea)", function (event)
-	{
-		return event.key != "Enter";
-	});
+document.addEventListener("DOMContentLoaded", () => {
 
-	// enable send button when one's ready with their announcement
-	$('#verify').change(function ()
-	{
-		run_send_check();
-	});
+    /**
+     * Prevents the enter key from submitting forms unless inside a textarea.
+     */
+    document.addEventListener("keydown", (event) => {
+        if (event.target.tagName !== "TEXTAREA" && event.key === "Enter") {
+            event.preventDefault();
+        }
+    });
 
-	$("input").change(function () {
-		run_send_check();
-	});
+    // Attach event listeners
+    document.querySelector("#verify").addEventListener("change", runSendCheck);
+    document.querySelectorAll("input").forEach(input => 
+        input.addEventListener("change", runSendCheck)
+    );
 
-	// enable datetime modules
-	$("#dt_start").DateTimePicker();
-	$("#dt_end").DateTimePicker();
+    // Initialize datetime pickers
+    $("#dt_start").DateTimePicker();
+    $("#dt_end").DateTimePicker();
 
-	function run_send_check() {
-		var btn = $("#submit_btn");
-		if ($("#verify").is(":checked") && is_platforms_selected()) {
-			btn.removeClass("disabled");
-			btn.attr('disabled', false);
-		}
-		else {
-			btn.addClass("disabled");
-			btn.attr('disabled', true);
-		}
-		
-	}
+    /**
+     * Enables or disables the submit button based on verification status and platform selection.
+     */
+    function runSendCheck() {
+        const btn = document.querySelector("#submit_btn");
+        if (document.querySelector("#verify").checked && isPlatformSelected()) {
+            btn.classList.remove("disabled");
+            btn.disabled = false;
+        } else {
+            btn.classList.add("disabled");
+            btn.disabled = true;
+        }
+    }
 
-	function is_platforms_selected() {
-		if ($("#platform_discord").is(":checked") ||
-			$("#platform_telegram").is(":checked") ||
-			$("#platform_email").is(":checked") ||
-			$("#platform_blankoweb").is(":checked")) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
+    /**
+     * Checks if at least one platform checkbox is selected.
+     * @returns {boolean} True if a platform is selected, otherwise false.
+     */
+    function isPlatformSelected() {
+        return ["#platform_discord", "#platform_telegram", "#platform_email", "#platform_blankoweb"]
+            .some(id => document.querySelector(id).checked);
+    }
 
-	function email_header_preview()
-	{
-		var reply_to = '';
-		var reply_to_field = $("#reply-to").val();
-		reply_to_field.length != 0 ? reply_to = reply_to_field : reply_to = "hallitus@blanko.fi";
+    /**
+     * Generates the email header preview with dynamic reply-to field.
+     * @returns {string} The formatted email header.
+     */
+    function emailHeaderPreview() {
+        const replyToField = document.querySelector("#reply-to").value;
+        const replyTo = replyToField.length !== 0 ? replyToField : "hallitus@blanko.fi";
+        
+        return `From: Blankon tiedotus <tiedotus-noreply@blanko.fi>\n`
+            + `To: blanko-fuksit@blanko.fi, blanko-wanhat@blanko.fi\n`
+            + `Reply-To: ${replyTo}`;
+    }
 
-		return "".concat(
-			"From: Blankon tiedotus <tiedotus-noreply@blanko.fi>\n",
-			"To: blanko-fuksit@blanko.fi, blanko-wanhat@blanko.fi\n",
-			"Reply-To: ", reply_to)
-	}
+    /**
+     * Updates the previews and character count based on the form inputs.
+     */
+    function updatePreview() {
+        const title = document.querySelector("#title").value;
+        const tag = $('input[name="tag"]:checked').val();
+        const titleTag = `[${tag}]`;
+        const description = document.querySelector("#description").value;
+        const signature = document.querySelector("#signature").value;
+        const messageLen = description.length + signature.length;
 
-	// Helper function to update preview and character count
-	function update_preview()
-	{
-
-		var title = $("#title").val();
-		var tag = $('input[name="tag"]:checked').val();
-		var titleTag = "[" + tag + "]";
-		var description = $("#description").val();
-		var signature = $("#signature").val();
-		var messagelen = description.length + signature.length;
-
-		$('#nav-discord .wrapper h3').text(titleTag + ' ' + title);
-		$('#nav-telegram .wrapper h3').text(titleTag + ' ' + title);
-		$('#nav-email .wrapper h3').text(titleTag + ' ' + title);
-
+		// Update title preview for each platform
+        document.querySelectorAll("#nav-discord .wrapper h3, #nav-telegram .wrapper h3, #nav-email .wrapper h3")
+            .forEach(el => el.textContent = `${titleTag} ${title}`);
+        
 		// Discord preview
-		$('#nav-discord .wrapper .description').text(description);
-		$('#nav-discord .wrapper .signature').text(signature);
-		
+        document.querySelector("#nav-discord .wrapper .description").textContent = description;
+        document.querySelector("#nav-discord .wrapper .signature").textContent = signature;
 		// Telegram preview
-		$('#nav-telegram .wrapper .description').text(description);
-		$('#nav-telegram .wrapper .signature').text(signature);
+        document.querySelector("#nav-telegram .wrapper .description").textContent = description;
+        document.querySelector("#nav-telegram .wrapper .signature").textContent = signature;
+		// Email preview
+        document.querySelector("#nav-email .wrapper .header").textContent = emailHeaderPreview();
+        document.querySelector("#nav-email .wrapper .description").textContent = description;
+        document.querySelector("#nav-email .wrapper .signature").textContent = signature;
 
-		// Email preview. Header, description, signature
-		$('#nav-email .wrapper .header').text(email_header_preview());
-		$('#nav-email .wrapper .description').text(description);
-		$('#nav-email .wrapper .signature').text(signature);
+		// Update message character count
+        const charCountEl = document.querySelector(".char_count");
+        charCountEl.textContent = `${messageLen}/2000`;
+        charCountEl.classList.toggle("alert", messageLen > 2000);
+        charCountEl.classList.toggle("alert-danger", messageLen > 2000);
+    }
 
-		// Char count.
-		$(".char_count").text(messagelen + "/2000");
-		if (messagelen > 2000)
-		{
-			$(".char_count").addClass("alert alert-danger");
-		}
-		if (messagelen < 2000)
-		{
-			$(".char_count").removeClass("alert alert-danger");
-		}
-	}
-
-	$("input").keyup(function ()
-	{
-		update_preview();
-	});
-	$('input[name="tag"]').on('change', update_preview);
-
-
-	// Update character count on every keypress in description field.
-	// Let's show a warning if description exceeds 2000 chars (Discord limitation).
-	$("textarea").keyup(function ()
-	{
-		update_preview();
-	});
-
+    // Attach event listeners for live preview updates
+    document.querySelectorAll("input, textarea").forEach(el => 
+        el.addEventListener("keyup", updatePreview)
+    );
+    document.querySelectorAll("input[name='tag']").forEach(el => 
+        el.addEventListener("change", updatePreview)
+    );
 });
