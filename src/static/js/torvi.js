@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("#nav-email .wrapper .description").textContent = description;
         document.querySelector("#nav-email .wrapper .signature").textContent = signature;
 
-		// Update message character count
+        // Update message character count
         const charCountEl = document.querySelector(".char_count");
         charCountEl.textContent = `${messageLen}/2000`;
         charCountEl.classList.toggle("alert", messageLen > 2000);
